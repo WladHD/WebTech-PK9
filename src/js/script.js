@@ -74,4 +74,89 @@ window.onload = function () {
         console.log(raum1.buchungen[i]);
 
     //raum1.buchungen.forEach((a) => console.log(a));
+
+    detailsAddRoomInformation();
+    detailsAddRoomBookings();
+    dashboardAddEvents();
+}
+
+function detailsAddRoomInformation(raum = raum1) {
+    const table = document.querySelector(".details-room-information table");
+
+    if(table === null || table === undefined) return;
+
+    function Paar(txt, wert) {
+        this.createDOM = function () {
+            const tr = document.createElement("tr");
+            const th = document.createElement("th");
+            const td = document.createElement("td");
+
+            th.appendChild(document.createTextNode(txt));
+            td.appendChild(document.createTextNode(wert));
+            tr.appendChild(th);
+            tr.appendChild(td);
+
+            return tr;
+        }
+    }
+
+    const information = [
+        new Paar("Nummer", raum.nummer),
+        new Paar("Bezeichnung", raum.bezeichnung),
+        new Paar("Gebäude", raum.gebaeude),
+        new Paar("Kapazität", raum.kapazitaet),
+        new Paar("Ausstattungsmerkmale", raum.ausstattungsmerkmale.join(", "))
+    ];
+
+    information.forEach((a) => table.appendChild(a.createDOM()));
+}
+
+function detailsAddRoomBookings(raum = raum1) {
+    const tbody = document.querySelector("#room-bookings tbody");
+
+    if(tbody === null || tbody === undefined) return;
+
+    raum.buchungen.forEach((a) => {
+        const tr = document.createElement("tr");
+
+        const td = [];
+
+        for(let i = 0; i < 4; i++)
+            td[i] = document.createElement("td");
+
+        td[0].appendChild(document.createTextNode(a.startzeit.toISOString().split("T")[0].split("-").reverse().join(".")));
+        td[1].appendChild(document.createTextNode(a.startzeit.toISOString().split("T")[1].substring(0, 5)));
+        td[2].appendChild(document.createTextNode(a.endzeit.toISOString().split("T")[1].substring(0, 5)));
+
+        const link = document.createElement("a");
+        link.href = "./booking.html";
+        link.appendChild(document.createTextNode(a.bezeichnung));
+
+        td[3].appendChild(link);
+
+        for(let i = 0; i < 4; i++)
+            tr.appendChild(td[i]);
+
+        tbody.appendChild(tr);
+    })
+}
+
+function dashboardAddEvents() {
+    const add = document.getElementById("dashboard-add-new");
+
+    if(add === null || add === undefined) return;
+
+    add.addEventListener("click", dashboardAddClickEvent)
+}
+
+function dashboardAddClickEvent() {
+    let name = prompt("Namen der Kachel eingeben");
+    const holder = document.getElementsByClassName("dashboard-main-horizontal-box")[0];
+    const last = document.getElementById("dashboard-add-new");
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    p.appendChild(document.createTextNode(name));
+    div.appendChild(p);
+
+    holder.insertBefore(div, last);
 }

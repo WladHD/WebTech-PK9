@@ -25,6 +25,10 @@ main h1 {
     text-align: center;
 }
 
+#dashboard-add-new {
+    cursor: pointer!important;
+}
+
 /* PK5 A3 */
 @media only screen and (max-width: 768px) {
     .dashboard-main-horizontal-box div {
