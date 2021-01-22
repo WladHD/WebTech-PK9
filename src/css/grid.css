@@ -1,0 +1,68 @@
+.grid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: "h h" "n n" "m z" "m z" "f f";
+}
+
+.grid-details-info {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    grid-template-columns: 45% 45%;
+    grid-template-areas: "a1 b" "a2 b";
+}
+
+header, nav {
+    justify-self: center;
+}
+
+.grid header {
+    grid-area: h;
+}
+
+.grid nav {
+    grid-area: n;
+}
+
+.grid main {
+    grid-area: m;
+}
+
+.grid aside {
+    grid-area: z;
+}
+
+.grid footer {
+    grid-area: f;
+}
+
+.grid-details-info .details-room-information {
+    grid-area: a1;
+}
+
+.grid-details-info .details-room-bookings {
+    grid-area: a2;
+}
+
+.grid-details-info figure {
+    grid-area: b;
+}
+
+.grid-details-info figure img {
+    width: 100%;
+    height: auto;
+}
+
+/* PK5 A3 */
+@media only screen and (max-width: 768px) {
+    .grid {
+        grid-template-areas: "h h" "n n" "m m" "z z" "f f";
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .grid-details-info {
+        grid-template-areas: "a1 a1" "a2 a2" "b b";
+    }
+}

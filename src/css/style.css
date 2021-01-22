@@ -1,0 +1,143 @@
+/* PK4 Ü1 */
+h1, h2, h3, h4, h5, h6 {
+    color: #34737a;
+}
+
+/* PK4 Ü2 */
+input, textarea, select {
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+input:required:invalid {
+    background-color: #fee5e9;
+}
+
+input:required:valid {
+    background-color: #b3fedb;
+}
+
+input:required {
+    border-bottom: 3px solid black;
+}
+
+.required::after {
+    content: '* ';
+    color: red;
+}
+
+fieldset {
+    padding: 5px;
+    margin: 5px;
+}
+
+fieldset legend {
+    font-size: 0.9em;
+    font-style: italic;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 0 0 black;
+}
+
+fieldset, fieldset legend {
+    border-radius: 3px;
+}
+
+/* PK4 Ü3 */
+aside {
+    padding: 3px;
+    margin: 3px;
+    border: 2px dashed black;
+    background-color: #e2e2e2;
+}
+
+aside h2 {
+    text-align: center;
+}
+
+nav a:hover {
+    color: black;
+}
+
+#room-bookings thead, #room-bookings tr:nth-of-type(even) {
+    background-color: #d1d1d1;
+}
+
+html, body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+a[href^="mailto:"]::before {
+    content: '';
+    background: url("../svg/letter.svg") no-repeat;
+    background-size: contain;
+    width: 1em;
+    height: 0.75em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 3px;
+}
+
+header p {
+    text-shadow: 1px 1px 2px black;
+    letter-spacing: 0.2em;
+    font-size: 2em;
+}
+
+/* PK4 Ü4 */
+section {
+    border-left: 1px solid gray;
+    padding: 0 0 5px 5px;
+    border-bottom: 1px solid gray;
+}
+
+/* PK5 Ü5 A1 */
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* PK5 Ü5 A2 */
+.info-view {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+.info-view img {
+    width: 100%;
+    height: auto;
+}
+
+header p, header img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* PK5 Ü5 A3 */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* PK5 A3 */
+@media only screen and (max-width: 768px) {
+    header p {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header p {
+        display: none;
+        visibility: hidden;
+    }
+}

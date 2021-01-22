@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Raumbuchung anlegen</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/grid.css">
+        <script src="src/js/script.js"></script>
+    </head>
+    <body>
+        <div class="grid">
+            <header>
+                <a href="dashboard.html"><img src="./src/img/logo/shark.svg" width="100" height="100" alt="Raum-App Logo"></a>
+                <h1>Raum-App</h1>
+                <!-- Quelle: https://pixabay.com/de/illustrations/hai-gesch%C3%A4ft-corporate-ozean-1417151/ -->
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Raumliste</a></li>
+                    <li><a href="./details.html">Raumdetails</a></li>
+                    <li><a href="./booking.html">Buchungsdetails</a></li>
+                    <li><a href="./reserve.html">Raumbuchung</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <h2>Raumbuchung anlegen</h2>
+
+                <form action="https://labs.inf.fh-dortmund.de/roomReservationService/testCreateReservation.php" method="post">
+                    <fieldset>
+                        <legend>Allgemeine Infos</legend>
+
+                        <label>Raumnummer<span class="required"></span><input type="text" name="roomno" pattern="[A-Z]\.[E1-3]\.[0-9]{2}" maxlength="6" autofocus required></label>
+                        <label>Bezeichnung<span class="required"></span><input type="text" name="restitle" placeholder="z.B. Kolloquium" maxlength="20" required></label>
+                        <label>Leiter
+                            <select name="resperson">
+                                <option value="firefox">Mona Schmidtke</option>
+                                <option value="chrome" selected>Mohamed Al Hussein</option>
+                                <option value="vivaldi">Wladislaw Jerokin</option>
+                            </select>
+                        </label>
+                        <label>Anzahl Teilnehmer <input type="number" name="resparticipants"></label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Zeitangaben</legend>
+
+                        <label>Datum<span class="required"></span><input type="date" name="resdate" required></label>
+                        <label>Beginn<span class="required"></span><input type="time" name="resstart" min="08:00" max="21:00" required></label>
+                        <label>Ende<span class="required"></span><input type="time" name="resend" max="21:59" required></label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Beschreibung</legend>
+
+                        <textarea name="resdescription" maxlength="500"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Alle Daten korrekt?</legend>
+
+                        <input type="submit" value="Raum buchen">
+                    </fieldset>
+
+                </form>
+            </main>
+
+            <aside>
+                <h2>Aktuelle Meldungen</h2>
+                <ul>
+                    <li>31.10.2022: Der Beamer in Raum B.2.20 ist leider defekt. Der Informatiker ist technisiert.</li>
+                    <li>04.09.2022: Bitte in den Räumen NICHT mit Permanentmarker auf die Whiteboards malen.</li>
+                </ul>
+            </aside>
+
+            <footer>
+                <p>&copy; by Team WebTech Inc.</p>
+            </footer>
+        </div>
+    </body>
+</html>

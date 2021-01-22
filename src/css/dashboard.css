@@ -1,0 +1,43 @@
+.dashboard-main-horizontal-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashboard-main-horizontal-box div {
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.dashboard-main-horizontal-box div p {
+    align-self: center;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+main h1 {
+    text-align: center;
+}
+
+/* PK5 A3 */
+@media only screen and (max-width: 768px) {
+    .dashboard-main-horizontal-box div {
+        height: 90px;
+        width: 90px;
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .dashboard-main-horizontal-box div {
+        height: 75px;
+        width: 75px;
+        font-size: 0.8em;
+    }
+}

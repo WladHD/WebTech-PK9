@@ -1,0 +1,40 @@
+.vertical-box, .horizontal-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-box {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.horizontal-box {
+    flex-direction: row;
+}
+
+aside {
+    flex-basis: 25%;
+}
+
+main {
+    flex-basis: 65%;
+}
+
+.index-main .vertical-box div, .booking-main .vertical-box div {
+    width: 90%;
+}
+
+.horizontal-box {
+    align-items: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+    .resize-break {
+        flex-direction: column;
+    }
+
+    .index-main .vertical-box div, .booking-main .vertical-box div {
+        width: 100%;
+    }
+}

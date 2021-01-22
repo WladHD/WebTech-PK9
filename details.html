@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Details</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/grid.css">
+        <script src="src/js/script.js"></script>
+    </head>
+    <body>
+        <div class="grid">
+            <header>
+                <a href="dashboard.html"><img src="./src/img/logo/shark.svg" width="100" height="100" alt="Raum-App Logo"></a>
+                <h1>Raum-App</h1>
+                <!-- Quelle: https://pixabay.com/de/illustrations/hai-gesch%C3%A4ft-corporate-ozean-1417151/ -->
+            </header>
+
+
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Raumliste</a></li>
+                    <li><a href="./details.html">Raumdetails</a></li>
+                    <li><a href="./booking.html">Buchungsdetails</a></li>
+                    <li><a href="./reserve.html">Raumbuchung</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <h2>Details zum Raum A.E.01</h2>
+
+                <div class="grid-details-info">
+                    <section class="details-room-information">
+                        <h3>Informationen zum Raum</h3>
+
+                        <table>
+                            <tr>
+                                <th>Nummer</th>
+                                <td>A.E.01</td>
+                            </tr>
+                            <tr>
+                                <th>Bezeichnung</th>
+                                <td>Hörsaal</td>
+                            </tr>
+                            <tr>
+                                <th>Gebäude</th>
+                                <td>Emil-Figge-Str. 42</td>
+                            </tr>
+                            <tr>
+                                <th>Kapazität</th>
+                                <td>300 Tischplätze</td>
+                            </tr>
+                            <tr>
+                                <th>Ausstattungsmerkmale</th>
+                                <td>3 Beamer, 2 Whiteboards</td>
+                            </tr>
+                        </table>
+                    </section>
+
+                    <section class="details-room-bookings">
+                        <h3>Buchungen zum Raum</h3>
+
+                        <table id="room-bookings">
+                            <thead>
+                                <tr>
+                                    <th>Datum</th>
+                                    <th>Startuhrzeit</th>
+                                    <th>Enduhrzeit</th>
+                                    <th>Bezeichnung</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>27.09.2022</td>
+                                    <td>09:00</td>
+                                    <td>12:00</td>
+                                    <td><a href="./booking.html">Erstbesprechung</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>10.11.2022</td>
+                                    <td>14:45</td>
+                                    <td>15:15</td>
+                                    <td><a href="./booking.html">Kaffeekranz</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <figure>
+                        <img src="./src/img/details/AE01.jpg" alt="Raumfoto von EF 42" width="600" height="367">
+                        <!-- Quelle (entspricht nicht EF 42 A.E.01): http://www.pflichtlektuere.com/24/11/2009/hoersaal-in-der-ef-50-in-dortmund-besetzt/ -->
+
+                        <figcaption>
+                            Abbildung: Innenraum A.E.01
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </main>
+
+            <aside>
+                <h2>Aktuelle Meldungen</h2>
+                <ul>
+                    <li>31.10.2022: Der Beamer in Raum B.2.20 ist leider defekt. Der Informatiker ist technisiert.</li>
+                    <li>04.09.2022: Bitte in den Räumen NICHT mit Permanentmarker auf die Whiteboards malen.</li>
+                </ul>
+            </aside>
+
+            <footer>
+                <p>&copy; by Team WebTech Inc.</p>
+            </footer>
+        </div>
+    </body>
+</html>
